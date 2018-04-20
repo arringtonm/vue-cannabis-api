@@ -1,11 +1,10 @@
 <template>
   <div id="app">
-    <h1>Groooovy</h1>
-    <!-- <h2>Weedipedia </h2> -->
+    <!-- <h1>Groooovy</h1> -->
+    <h1>weedipedia</h1>
 
     <div id="searchTabAndBox">
     <ul>
-      <!-- <li><h2>Search</h2></li> -->
 
       <li id="searchTabsName" class="searchNav" v-bind:class="{ active : searchTab == 'name'}" @click="searchTab = 'name'">Name</li>
       <li id="searchTabsType" class="searchNav" v-bind:class="{ active : searchTab == 'type'}" @click="searchTab = 'type'">Type</li>
@@ -19,7 +18,7 @@
       <!-- <transition name="fade"> -->
         <div v-if="searchTab == 'name'" key="searchName">
           <form id="name" @submit.prevent="searchName">
-            <input type="text" placeholder="Strain name or keyword" v-model="searchByName">
+            <input type="text" placeholder="Name or keyword" v-model="searchByName">
 
             <button type="submit">Search</button>
           </form>
@@ -125,7 +124,9 @@ body {
 
 #searchBox {
   margin-top: 30px;
-  border: 1px solid #83468c;
+  // border: 1px solid #83468c;
+  border: 1px solid rgba(131, 70, 140, 0.5);
+  // box-shadow: 0px 1px 5px rgba(131, 70, 140,0.15);
   background-color: white;
   // border-radius: 15px;
   padding: 25px;
@@ -136,11 +137,60 @@ body {
 }
 
 
+input[type=text] {
+  color: #444;
+  padding: 10px;
+  font-size: 24px;
+  font-weight: 150;
+  &:focus {
+    outline-color: rgba(131, 70, 140,0.05);
+    outline-width: thin;
+  }
+
+}
+
+::placeholder {
+  color: #999;
+}
+
+button {
+  margin-top: 20px;
+  // border: 1px solid white;
+  // box-shadow: 0px 1px 2px rgba(131, 70, 140,0.55);
+  // box-shadow: 0px 2px 2px rgba(0,0,0,0.25);
+  padding: 10px;
+  background-color: rgba(252, 129, 80,0.85);
+  font-size: 24px;
+  font-weight: 150;
+  color: #444;
+  color: white;
+
+  transition: all 250ms, transform 50ms;
+  &:hover {
+    background-color: rgba(252, 129, 80,1);
+
+  }
+  &:focus {
+    outline: none;
+  }
+  &:active {
+    transform: scale(0.97);
+  }
+  // background-color: #6AD2EF;
+
+  //
+}
+
 ul {
-  margin-left: -25px;
+  margin-left: -20px;
+}
+
+li {
+  line-height: 1.8;
 }
 
 li.searchNav {
+  line-height: 1.4;
   display: inline-block;
   padding: 0px 10px;
   margin-left: -3px;
@@ -171,21 +221,37 @@ li.searchNav {
 
 }
 
+
 h1 {
+  transform: translate(530px,40px);
+  // text-decoration: underline;
+  // text-decoration-color: #83468c;
   color: #444;
   font-weight: 900;
-  font-size: 120px;
+  font-size: 100px;
   animation-name: flex;
-  animation-duration: 700ms;
+  animation-duration: 500ms;
+  margin-top: -30px;
+  &::after {
+
+  }
   // animation-iteration-count: infinite;
   // text-decoration: underline;
-  &:hover {
-
-    animation-name: glint;
-    animation-duration: 1050ms;
-    // animation-iteration-count: infinite;
-  }
+  // &:hover {
+  //
+  //   animation-name: glint;
+  //   animation-duration: 1050ms;
+  //   // animation-iteration-count: infinite;
+  // }
 }
+
+.subtitle {
+  display: inline-block;
+  font-weight: 200;
+  // font-size: 70px;
+}
+
+
 
 h2 {
   margin-top: -90px;
