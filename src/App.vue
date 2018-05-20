@@ -72,9 +72,8 @@ export default {
       strainIdResponse: '',
       strainResponse: [],
       strainApiKey: strainApiKey,
-      msg: 'Let\'s refactor this!',
       strains: ['Indica', 'Sativa', 'Hybrid'],
-      effects: ['anxious', 'aroused', 'cramps', 'creative']
+      effects: ['Anxious', 'Aroused', 'Cramps', 'Creative']
     }
   },
   methods: {
@@ -88,6 +87,12 @@ export default {
         this.strainIdResponse = response.data
       })
       // console.log(strain);
+    },
+    searchName: function() {
+      // axios.get(`http://strainapi.evanbusse.com/API_KEY/strains/search/name/${searchByName}`).then(response => {
+      //   this.strainNameResponse = response.data
+      // })
+      console.log(this.searchByName);
     }
   }
 }
@@ -147,6 +152,10 @@ input[type=text] {
     outline-width: thin;
   }
 
+}
+
+input[type=radio] {
+  margin-right: 10px;
 }
 
 ::placeholder {
