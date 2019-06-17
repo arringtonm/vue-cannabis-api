@@ -1,4 +1,6 @@
-# cannabis-api
+# 'Weedipedia' cannabis API interface
+
+
 
 ## Project setup
 ```
